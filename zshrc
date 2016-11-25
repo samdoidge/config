@@ -24,3 +24,7 @@ alias h="history | grep -E -v '^ *[0-9]+ *h ' | grep "
 function f {
   find . -iname "*$1*"
 }
+
+function s {
+  grep -ri $1 .
+}
