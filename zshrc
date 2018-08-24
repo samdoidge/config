@@ -1,30 +1,23 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/samdoidge/.oh-my-zsh
+export ZSH="/Users/samdoidge/.oh-my-zsh"
 
-# Set name of the theme to load.
 ZSH_THEME="agnoster"
-
-# This is set to reduce length of prompt. 
 DEFAULT_USER="samdoidge"
 
-# History size
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+#History size
 HISTFILE=~/.zsh_history
 HISTSIZE=9999
 SAVEHIST=$HISTSIZE
 
-plugins=(git)
-
-# User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/samdoidge/Code/arcanist/bin:/Users/samdoidge/.composer/vendor/bin"
-source $ZSH/oh-my-zsh.sh
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs
 alias h="history | grep -E -v '^ *[0-9]+ *h ' | grep "
 
-function f {
-  find . -iname "*$1*"
-}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-function s {
-  grep -ri $1 .
-}
+export PATH=$HOME/.composer/vendor/bin:$PATH
+~
